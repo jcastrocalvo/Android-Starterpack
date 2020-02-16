@@ -2,20 +2,15 @@ package io.jcastrocalvo.androidsampleapp
 
 import android.app.Application
 import android.content.Context
-import io.jcastrocalvo.core.ContextModule
 import io.jcastrocalvo.core.CoreComponent
 import io.jcastrocalvo.core.CoreComponentProvider
 import io.jcastrocalvo.core.DaggerCoreComponent
-import io.jcastrocalvo.core.utils.ThemeUtils
+import io.jcastrocalvo.core.modules.ContextModule
 import timber.log.Timber
-import javax.inject.Inject
-import kotlin.random.Random
 
 class AndroidSampleApp : Application(), CoreComponentProvider {
 
     lateinit var coreComponent: CoreComponent
-    @Inject
-    lateinit var themeUtils: ThemeUtils
 
     /**
      * The onCreate of the whole application
@@ -30,7 +25,6 @@ class AndroidSampleApp : Application(), CoreComponentProvider {
             .build()
 
         initializeTimber()
-        randomNightMode()
     }
 
     /**
@@ -39,15 +33,6 @@ class AndroidSampleApp : Application(), CoreComponentProvider {
     private fun initializeTimber() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
-        }
-    }
-
-    /**
-     * randomizes dark mode so you can see both sides if possible
-     */
-    private fun randomNightMode() {
-        if (BuildConfig.DEBUG) {
-            themeUtils.setNightMode(Random.nextBoolean(), 0)
         }
     }
 

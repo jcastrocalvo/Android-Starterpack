@@ -1,4 +1,4 @@
-package io.jcastrocalvo.core
+package io.jcastrocalvo.core.modules
 
 import android.app.Application
 import android.content.Context

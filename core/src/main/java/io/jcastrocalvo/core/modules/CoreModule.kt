@@ -1,4 +1,4 @@
-package io.jcastrocalvo.core
+package io.jcastrocalvo.core.modules
 
 import dagger.Module
 import dagger.Provides
