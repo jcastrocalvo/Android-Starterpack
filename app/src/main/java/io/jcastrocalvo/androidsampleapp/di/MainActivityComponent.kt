@@ -7,7 +7,9 @@ import io.jcastrocalvo.core.scopes.ActivityScope
 import javax.inject.Singleton
 
 @ActivityScope
-@Component(dependencies = [CoreComponent::class])
+@Component(modules = [ViewModelModule::class],
+        dependencies = [
+    CoreComponent::class])
 interface MainActivityComponent {
     fun inject(mainActivity: MainActivity)
 }

@@ -3,4 +3,8 @@
     <string name="title_core">Core</string>
     <string name="feature_1">Feature 1</string>
     <string name="feature_2">Feature 2</string>
+    <string name="enter_text_above_it_will_show_here">Enter text below, it will show here</string>
+    <string name="toggle_input_visibility">Toggle Input Visibility</string>
+    <string name="update_text">Update Text</string>
+    <string name="type_text_here">Type text here</string>
 </resources>
