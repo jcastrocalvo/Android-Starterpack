@@ -2,6 +2,9 @@ package io.jcastrocalvo.androidsampleapp
 
 import android.app.Application
 import android.content.Context
+import android.os.Handler
+import kotlin.random.Random
+import androidx.appcompat.app.AppCompatDelegate
 import io.jcastrocalvo.core.CoreComponent
 import io.jcastrocalvo.core.CoreComponentProvider
 import io.jcastrocalvo.core.DaggerCoreComponent
@@ -25,6 +28,7 @@ class AndroidSampleApp : Application(), CoreComponentProvider {
             .build()
 
         initializeTimber()
+        initializeTheme()
     }
 
     /**
@@ -33,6 +37,18 @@ class AndroidSampleApp : Application(), CoreComponentProvider {
     private fun initializeTimber() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
+        }
+    }
+
+    private fun initializeTheme() {
+        if (BuildConfig.DEBUG) {
+            AppCompatDelegate.setDefaultNightMode(
+                if (Random.nextBoolean()) {
+                    AppCompatDelegate.MODE_NIGHT_YES
+                } else {
+                    AppCompatDelegate.MODE_NIGHT_NO
+                }
+            )
         }
     }
 
