@@ -2,14 +2,13 @@ package io.jcastrocalvo.androidsampleapp
 
 import android.app.Application
 import android.content.Context
-import android.os.Handler
-import kotlin.random.Random
 import androidx.appcompat.app.AppCompatDelegate
 import io.jcastrocalvo.core.CoreComponent
 import io.jcastrocalvo.core.CoreComponentProvider
 import io.jcastrocalvo.core.DaggerCoreComponent
 import io.jcastrocalvo.core.modules.ContextModule
 import timber.log.Timber
+import kotlin.random.Random
 
 class AndroidSampleApp : Application(), CoreComponentProvider {
 
