@@ -11,7 +11,7 @@ import timber.log.Timber
 import javax.inject.Inject
 import kotlin.random.Random
 
-class SampleApp : Application(), CoreComponentProvider {
+class AndroidSampleApp : Application(), CoreComponentProvider {
 
     lateinit var coreComponent: CoreComponent
     @Inject
@@ -64,6 +64,6 @@ class SampleApp : Application(), CoreComponentProvider {
          */
         @JvmStatic
         fun coreComponent(context: Context) =
-            (context.applicationContext as? SampleApp)?.coreComponent
+            (context.applicationContext as? AndroidSampleApp)?.coreComponent
     }
 }
